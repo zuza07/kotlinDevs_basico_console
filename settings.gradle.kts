@@ -1,3 +1,3 @@
 
-rootProject.name = "olaMundo"
+rootProject.name = "kotlinDevs_basico_console"
 

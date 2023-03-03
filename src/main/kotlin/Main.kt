@@ -101,5 +101,5 @@ fun aula05() {
     //tarefa a desenvolver, descobrir a lógica para a impressão abaixo
     println("Credito = ${cCredito}  - Débito = ${cDebito}        SALDO = ${cCredito - cDebito}")
 
-    //teste
+    //teste 123456
 }

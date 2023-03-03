@@ -88,7 +88,17 @@ fun aula05() {
     }
     println("Total ${cTotal}")
 
+
+    var cCredito = 0
+    var cDebito = 0
+    for (obj in _loCar) {
+        if (obj.CAR_TIPO.equals("C")) {
+            cCredito = cCredito + obj.CAR_VALOR
+        } else {
+            cDebito = cDebito + obj.CAR_VALOR
+        }
+    }
     //tarefa a desenvolver, descobrir a lógica para a impressão abaixo
-    println("Credito = $$$$  - Débito = $$$$        SALDO = $$$$")
+    println("Credito = ${cCredito}  - Débito = ${cDebito}        SALDO = ${cCredito - cDebito}")
 
 }

@@ -6,8 +6,10 @@ fun main(args: Array<String>) {
     //aula03()
 
     //aula04()
-    aula05()
+    //aula05()
+    aula06()
 }
+
 
 fun aula01() {
 
@@ -52,54 +54,52 @@ fun aula03() {
 
 fun aula04() {
     //lista de objetos
-    val locli = ArrayList<Cliente>()
-
-    locli.add(Cliente().construtor(1, "Eduardo Zuza", "Francisco Alves", "Sorocaba"))
-    locli.add(Cliente().construtor(2, "Alexandre", "Francisco Alves", "Itu"))
-    locli.add(Cliente().construtor(3, "Edinaldo", "Francisco Alves", "Sorocaba"))
 
     //Cliente().imprime(locli[1])
-    Cliente().imprimeLista(locli)
+    val loCli = Cliente().verListaCliente()
+    Cliente().imprimeLista(loCli)
+
+    Cliente().imprimeLista(loCli)
 }
 
 fun aula05() {
 
-    val _loCar = ArrayList<Carteira>()
-    //val _loCar = MutableList<Carteira>)
-
-
-    _loCar.add(Carteira().construtor("20/02/2023", "shop de vinho", 16, "D"))
-    _loCar.add(Carteira().construtor("20/02/2023", "cerveja", 42))
-    _loCar.add(Carteira().construtor("20/02/2023", "frango com farofa", 35))
-    _loCar.add(Carteira().construtor("21/02/2023", "camiseta", 160))
-    _loCar.add(Carteira().construtor("21/02/2023", "estacionamento", 13))
-    _loCar.add(Carteira().construtor("21/02/2023", "sorvete", 990))
-    _loCar.add(Carteira().construtor("21/02/2023", "salario", 1500, "C"))
+    val _loCar = Carteira().verListaCarteira()
 
     Carteira().imprimirLista(_loCar)
-
-    var cTotal = 0
-    for (obj in _loCar) {
-        if (obj.CAR_TIPO.equals("C")) {
-            cTotal = cTotal + obj.CAR_VALOR
-        } else {
-            cTotal = cTotal - obj.CAR_VALOR
-        }
-    }
-    println("Total ${cTotal}")
-
-
-    var cCredito = 0
-    var cDebito = 0
-    for (obj in _loCar) {
-        if (obj.CAR_TIPO.equals("C")) {
-            cCredito = cCredito + obj.CAR_VALOR
-        } else {
-            cDebito = cDebito + obj.CAR_VALOR
-        }
-    }
-    //tarefa a desenvolver, descobrir a lógica para a impressão abaixo
-    println("Credito = ${cCredito}  - Débito = ${cDebito}        SALDO = ${cCredito - cDebito}")
-
+    Carteira().totalizaCarteira(_loCar)
     //teste 123456 7891
+}
+
+fun aula06() {
+    val loCar = Carteira().verListaCarteira()
+    Carteira().totalizaCarteira(loCar)
+    //Carteira().imprimirLista(loCar)
+
+    val loCli = Cliente().verListaCliente()
+    Cliente().imprimeLista(loCli)
+
+    println("")
+
+    //lambda
+    //val loCli88 = loCli.filter { a -> a.CLI_CIDADE.equals("Sorocaba") }
+    Cliente().imprimeLista(loCli.filter { a -> a.CLI_CIDADE.equals("Serra") })
+
+    /*
+    for (obj in loCli) {
+        if (obj.CLI_CIDADE.equals("Sorocaba")) {
+            Cliente().imprime(obj)
+        }
+    }
+
+     */
+
+
+    //impresso da lista da carteira valores que sejam maiores que 100
+
+    //lista de debitos
+
+    //lista de créditos
+
+    //lista somente das cidades referente ao cliente
 }

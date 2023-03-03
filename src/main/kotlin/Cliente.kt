@@ -25,13 +25,27 @@ class Cliente {
         println("${_ocli.CLI_CODIGO} - ${_ocli.CLI_NOME}, ${_ocli.CLI_ENDERECO}, cidade/sp ${_ocli.CLI_CIDADE}")
     }
 
-    fun imprimeLista(_lista: ArrayList<Cliente>) {
+    fun imprimeLista(_lista: List<Cliente>) {
 
         //for while repeat = são laços
         for (_ocli in _lista) {
             imprime(_ocli)
         }
 
+    }
+
+    fun verListaCliente(): List<Cliente> {
+
+        val locli = ArrayList<Cliente>()
+
+        locli.add(Cliente().construtor(1, "Eduardo Zuza", "Francisco Alves", "Sorocaba"))
+        locli.add(Cliente().construtor(2, "Alexandre", "Francisco Alves", "Serra"))
+        locli.add(Cliente().construtor(3, "Edinaldo", "Francisco Alves", "Sorocaba"))
+        locli.add(Cliente().construtor(4, "Renato", "Francisco Alves", "Sorocaba"))
+        locli.add(Cliente().construtor(5, "Matheus", "Francisco Alves", "Sorocaba"))
+        locli.add(Cliente().construtor(6, "Daniel", "Francisco Alves", "Serra"))
+
+        return locli
     }
 
 }
